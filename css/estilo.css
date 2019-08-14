@@ -1,0 +1,129 @@
+/*
+    Gerais
+*/
+
+body {
+    width: 100%;
+    background-color: #D8D8D8;
+}
+
+#corpo {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+a {
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #ffe6e6;
+}
+
+a:hover {
+    background-color: #DDA0DD;
+    color: black;
+}
+
+/*
+    header
+*/
+
+#header {
+    height: 50px;
+    padding: 10px 0px;
+    background-color: #9400D3;
+    border-radius: 15px;
+}
+
+#header ul li{
+    list-style: none;
+    display: inline;
+}
+
+#header a {
+    padding: 3px 10px;
+}
+
+#header img {
+    width: 32px;
+}
+
+/*
+    conteudo
+*/
+
+#conteudo {
+    margin: 20px 0px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+/*
+    footer
+*/
+
+#footer {
+    background-color: white;
+    border-radius: 15px;
+}
+
+/*
+    Imagens do conteúdo
+*/
+
+.col-sm {
+    text-align: center;
+}
+
+.mais {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.visual {
+    padding: 10px;
+    margin: 10px;
+    background-color: #D8D8D8;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.menos {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.botao {
+    margin: 20px 0;
+    padding: 5px;
+    font-size: 1.5em;
+    width: 25%;
+    height: 50px;
+    min-width: 200px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+#comecar {
+    background-color: orangered;
+}
+
+#pausar {
+    background-color: greenyellow;
+}
+
+/*
+    Comuns
+*/
+
+.centralizar {
+    text-align: center;
+}
