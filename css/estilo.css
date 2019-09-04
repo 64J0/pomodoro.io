@@ -88,13 +88,13 @@ a:hover {
 
 .mais {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
     cursor: pointer;
 }
 
 .visual {
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 10px 30px;
     background-color: #D8D8D8;
     border: 2px solid black;
     border-radius: 20px;
@@ -102,7 +102,7 @@ a:hover {
 
 .menos {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
     cursor: pointer;
 }
 
@@ -132,4 +132,14 @@ a:hover {
 
 .centralizar {
     text-align: center;
+}
+
+hr {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+
+h4 {
+    margin: 15px 0 10px 0;
 }
