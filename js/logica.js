@@ -2,6 +2,9 @@ const audio = document.querySelector("audio");
 
 
 
+/*
+    Essa função é usada para aumentar o valor mostrado na tela quando for pressionado o botão com o símbolo de mais
+*/
 function aumenta(numero) {
     let id = "visual" + numero;
     let visual = document.getElementById(id);
@@ -23,8 +26,9 @@ function aumenta(numero) {
 
 
 
-
-
+/*
+    Essa função é usada para diminuir o valor mostrado na tela quando for pressionado o botão com o símbolo de menos
+*/
 function diminui(numero) {
     let id = "visual" + numero;
     let visual = document.getElementById(id);
@@ -50,6 +54,10 @@ function diminui(numero) {
 var auxiliar = 0;
 let countdown;
 
+/*
+    Essa função é usada para começar o timer, consequentemente decrementando seu valor a partir da contagem do tempo
+*/
+
 function comecar() {
     clearInterval(countdown);
 
@@ -73,12 +81,11 @@ function comecar() {
 
 
 
+/*
+    Esta função pega os valores que estão contidos nos campos do site e converte em o respectivo valor em milissegundos.
+*/
 
 function getMilissegundos() {
-
-    /*
-        Esta função pega os valores que estão contidos nos campos do site e converte em o respectivo valor em milissegundos.
-    */
 
     let milisegundos = 0;
 
@@ -95,6 +102,9 @@ function getMilissegundos() {
 
 
 
+/*
+    Essa função é usada para diminuir o número mostrado na tela do usuário
+*/
 function diminui_numero() {
 
     let visual = document.getElementsByClassName("visual");
@@ -135,6 +145,9 @@ function diminui_numero() {
 
 
 
+/*
+    Essa função é usada para pausar o timer
+*/
 function pausar() {
     clearInterval(countdown);
     audio.pause();
@@ -144,7 +157,9 @@ function pausar() {
 
 
 
-
+/*
+    Essa função é usada para atualizar o título da página com o valor atual do timer
+*/
 function muda_titulo() {
 
     let visual = document.getElementsByClassName("visual");
