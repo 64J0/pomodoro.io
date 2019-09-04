@@ -1,4 +1,5 @@
 const audio = document.querySelector("audio");
+let flag = true;
 
 
 
@@ -6,21 +7,25 @@ const audio = document.querySelector("audio");
     Essa função é usada para aumentar o valor mostrado na tela quando for pressionado o botão com o símbolo de mais
 */
 function aumenta(numero) {
-    let id = "visual" + numero;
-    let visual = document.getElementById(id);
-    if ((numero % 2) == 0) {
-        if (visual.innerHTML < 5){
-            visual.innerHTML++;
-        } else if (visual.innerHTML == 5) {
-            visual.innerHTML = 0;
-        }
-    } else {
-        if (visual.innerHTML < 9){
-            visual.innerHTML++;
-        } else if (visual.innerHTML == 9) {
-            visual.innerHTML = 0;
+
+    if (flag) { //Só vai funcionar a função caso não tenha sido iniciado o timer
+        let id = "visual" + numero;
+        let visual = document.getElementById(id);
+        if ((numero % 2) == 0) {
+            if (visual.innerHTML < 5){
+                visual.innerHTML++;
+            } else if (visual.innerHTML == 5) {
+                visual.innerHTML = 0;
+            }
+        } else {
+            if (visual.innerHTML < 9){
+                visual.innerHTML++;
+            } else if (visual.innerHTML == 9) {
+                visual.innerHTML = 0;
+            }
         }
     }
+    
 }
 
 
@@ -30,19 +35,22 @@ function aumenta(numero) {
     Essa função é usada para diminuir o valor mostrado na tela quando for pressionado o botão com o símbolo de menos
 */
 function diminui(numero) {
-    let id = "visual" + numero;
-    let visual = document.getElementById(id);
-    if ((numero % 2) == 0) {
-        if (visual.innerHTML > 0){
-            visual.innerHTML--;
-        } else if (visual.innerHTML == 0) {
-            visual.innerHTML = 5;
-        }
-    } else {
-        if (visual.innerHTML > 0){
-            visual.innerHTML--;
-        } else if (visual.innerHTML == 0) {
-            visual.innerHTML = 9;
+
+    if(flag) {
+        let id = "visual" + numero;
+        let visual = document.getElementById(id);
+        if ((numero % 2) == 0) {
+            if (visual.innerHTML > 0){
+                visual.innerHTML--;
+            } else if (visual.innerHTML == 0) {
+                visual.innerHTML = 5;
+            }
+        } else {
+            if (visual.innerHTML > 0){
+                visual.innerHTML--;
+            } else if (visual.innerHTML == 0) {
+                visual.innerHTML = 9;
+            }
         }
     }
 }
@@ -75,6 +83,8 @@ function comecar() {
         }
 
     }, 1000);
+
+    flag = false;
 }
 
 
@@ -135,6 +145,7 @@ function diminui_numero() {
         pausar();
         audio.currentTime = 1;
         audio.play();
+        flag = true;
     }
 
     muda_titulo();
@@ -151,6 +162,7 @@ function diminui_numero() {
 function pausar() {
     clearInterval(countdown);
     audio.pause();
+    flag = true;
 }
 
 
