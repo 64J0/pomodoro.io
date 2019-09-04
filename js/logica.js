@@ -1,5 +1,7 @@
 const audio = document.querySelector("audio");
 
+
+
 function aumenta(numero) {
     let id = "visual" + numero;
     let visual = document.getElementById(id);
@@ -18,6 +20,11 @@ function aumenta(numero) {
     }
 }
 
+
+
+
+
+
 function diminui(numero) {
     let id = "visual" + numero;
     let visual = document.getElementById(id);
@@ -35,6 +42,10 @@ function diminui(numero) {
         }
     }
 }
+
+
+
+
 
 var auxiliar = 0;
 let countdown;
@@ -58,13 +69,17 @@ function comecar() {
     }, 1000);
 }
 
+
+
+
+
+
 function getMilissegundos() {
 
     /*
         Esta função pega os valores que estão contidos nos campos do site e converte em o respectivo valor em milissegundos.
     */
 
-    let visual = document.getElementsByClassName("visual");
     let milisegundos = 0;
 
     milissegundos = document.getElementById("visual0").innerHTML * 1000 * 600;
@@ -75,6 +90,10 @@ function getMilissegundos() {
     return milissegundos;
 
 }
+
+
+
+
 
 function diminui_numero() {
 
@@ -104,14 +123,46 @@ function diminui_numero() {
         document.getElementById("visual3").innerHTML = 9;
     } else {
         pausar();
+        audio.currentTime = 1;
         audio.play();
-        alert("Acabou o tempo");
     }
+
+    muda_titulo();
     
 }
 
+
+
+
+
 function pausar() {
     clearInterval(countdown);
+    audio.pause();
+}
+
+
+
+
+
+
+function muda_titulo() {
+
+    let visual = document.getElementsByClassName("visual");
+    let horario = "";
+
+    for (let i = 0; i < visual.length; i++) {
+        horario += document.getElementById("visual" + i).innerHTML;
+        if (i == 1) {
+            horario += ":";
+        }
+    }
+
+    if (horario != "00:00") {
+        document.title = "Pomodoro " + horario;
+    } else {
+        document.title = "Pomodoro";
+    }
+    
 }
 
 //-------------------------------------------------------------------
